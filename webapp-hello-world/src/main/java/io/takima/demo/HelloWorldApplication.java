@@ -23,6 +23,8 @@ public class HelloWorldApplication {
 		System.out.println("Vous pouvez maintenant supprimer ce projet.");
 		System.out.println("---------------------------------------");
 		System.out.println("---------------------------------------");
+		System.out.println("---------------------------------------");
+
 	}
 
 }

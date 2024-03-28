@@ -5,14 +5,13 @@ nav {
   background: linear-gradient(to right, theme.$common-purple, theme.$common-red);
 
   div {
-    height: 100%;
     display: flex;
     align-items: center;
 
     img {
       margin-left: 20px;
-      height: 60px;
-      transition: 0.3s;
+      height: 90px;
+      transition: transform 0.3s;
 
       &:hover {
         transform: scale(1.1);
@@ -25,16 +24,39 @@ mat-nav-list {
   margin-left: 50px;
   display: flex;
   flex-direction: row;
-  width: 250px;
+  width: 401px;
 
-  span,
   a {
     font-size: large;
     color: theme.$white;
-    transition: 0.3s;
+    transition: transform 0.3s;
+    position: relative;
 
     &:hover {
       transform: scale(1.2);
+    }
+
+    .underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0; // Initially hidden, will be 100% on hover
+      height: 2px; // Height of the underline
+      background-color: rgb(255, 0, 0); // Color of the underline
+      transition: width 0.5s ease;
+      margin-bottom: 4px;
+    }
+
+    .nav-underline-img {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      width: 50px; // Adjust based on your image size
+      height: 10px; // Adjust based on your image size
+      opacity: 0; // Initially hidden, will be 1 on hover
+      position: absolute;
+      bottom: 0; // Adjust based on your layout
+      left: 50%; // Center horizontally
+      transform: translateX(-150%); // Center horizontally
+      margin-top: 150px;
     }
   }
 }

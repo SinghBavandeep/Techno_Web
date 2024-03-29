@@ -21,13 +21,13 @@ export class NavbarComponent {
       link.underlineStyle = { width: '70%' };
       link.iconStyle = {
         opacity: '1',
-        transform: 'translateX(-40%)' // Image will now start from its original position
+        transform: 'translateX(-0%)' // Image will now start from its original position
       };
     } else {
       link.underlineStyle = { width: '0' };
       link.iconStyle = {
         opacity: '0',
-        transform: 'translateX(-150%)' // Return to centered when not hovering
+        transform: 'translateX(-110%)' // Return to centered when not hovering
       };
     }
   }

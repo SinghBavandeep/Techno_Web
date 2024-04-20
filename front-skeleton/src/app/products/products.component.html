@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://cdn.tailwindcss.com" rel="stylesheet">
+
+
+<div class="wrap">
+  <div class="search">
+    <input type="text" class="searchTerm" placeholder="Que cherchez-vous ?">
+    <button type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+</div>
+
+<h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1>
+
+
+
+
+
+
+
+
+<div *ngIf="products.length; else noProducts" class="cards-container">
+  <div *ngFor="let product of products" class="card" >
+    <a [routerLink]="['/products/id/', product.productId]" style="text-decoration: none; color: inherit;">
+    <img [src]="product.imageLink" alt="image" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+    </div>
+    </a>
+  </div>
+</div>
+<ng-template #noProducts>
+  <p>Aucun produit disponible.</p>
+</ng-template>

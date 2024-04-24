@@ -1,20 +1,21 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-
 }
 
 .card {
-  border: 2px solid black; /* Bordure noire */
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.2s;
-  background-color: white; /* Fond blanc pour la carte */
+  gap: 20px;
+  padding: 20px;
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgb(245, 230, 230);
+  filter: drop-shadow(0 30px 10px rgb(255, 255, 255));
 }
 
 .card:hover {
@@ -22,9 +23,12 @@
 }
 
 .card-img-top {
+  background-position: center;
+  background-size: cover;
+  height: 300px;
   width: 100%;
-  height: 200px;
-  object-fit: contain; /* Changez cover par contain */
+  border-radius: 12px;
+  border: 5px solid rgba(255,255,255, 0.255);
 }
 
 .card-body {
@@ -32,13 +36,121 @@
 }
 
 .card-title {
-  margin-bottom: 10px;
+  font-family: 'Righteous', sans-serif;
+  color: rgba(255,255,255,0.98);
+  text-transform: uppercase;
+  font-size: 18px;
 }
 
 .card-text {
   font-size: 14px;
   color: #666;
 }
+
+
+
+.link_wrapper{
+  position: relative;
+}
+
+.button-a{
+  display: block;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+}
+
+.icon{
+  width: 30px;
+  height: 30px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+  margin-top: 10px;
+}
+
+.icon svg{
+  width: 20px;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 10px);
+  transform: rotate(-45deg);
+  fill: #ef872e;
+  transition: all .35s;
+}
+
+.button-a:hover{
+  width: 200px;
+  border: 3px solid #ef872e;
+  background: transparent;
+  color: #000000;
+}
+
+.button-a:hover + .icon{
+  border: 3px solid #f3a632;
+  right: -2%;
+}
+
+
+
+
+
+
+.outline {
+  background: transparent;
+  color: rgba(0, 212, 255, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  transition: all .3s ease;
+
+}
+
+.outline:hover{
+  transform: scale(1.125);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s ease;
+}
+
+.fill {
+  background: rgba(0, 212, 255, 0.9);
+  color: rgba(255,255,255,0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all .3s ease;
+}
+
+.fill:hover{
+  transform: scale(1.125);
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+  transition: all .3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,8 +193,31 @@
 .carrosel-class{
   width: 100%;
   margin-top: 20px;
-  height: 200px;
+  height: 270px;
+
 }
-.btn {
-  @apply py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400
+.carousel-item .slide-image {
+
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+.carousel-item {
+
+  width: 100%;
+  height: 270px;
+  border: none;
+  top: 0;
+  left: 100%;
+}
+.carousel-item.active {
+  left: 0;
+  transition: all 0.3s ease-out;
+}
+.carousel-item div {
+  height: 100%;
+}
+
+
+
+
